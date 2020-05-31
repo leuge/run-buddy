@@ -366,10 +366,44 @@ section {
     /*overflow: auto;*/
 }
 
-.trainer img {
+.trainer-img {
     width: 100%;
     /*float: left;*/
-    overflow: auto;
+    min-height: 300px;
+    /*background-size:cover;*/
+    display:flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    background: (rgba(252, 225, 56, 0.3));
+}
+
+.trainer:hover .trainer-img h3, .trainer:hover .trainer-img h4 {
+    top: 0px;
+    position:relative;
+    top: 200px;
+    z-index: 1px;
+    overflow: scroll;
+}
+
+.trainer-img h3 {
+    transition: 0.6;
+}
+
+.trainer-img h4 {
+    transition: 0.6;
+}
+
+.trainer-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgba(252, 225, 56, 0.3);
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: initial; 
 }
 
 .trainer-bio {
@@ -378,6 +412,17 @@ section {
     /*width: 65%;*/
     overflow: auto;
     line-height: 1.3;
+}
+
+.trainer-bio h3 {
+    font-size: 28px;
+}
+
+.trainer-bio h4 {
+    font-weight: lighter;
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: none;
 }
 
 .text-left {
@@ -410,6 +455,18 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.trainer-1 {
+    background-image: url("/trainer-1.jpg")
+}
+
+.trainer-2 {
+    background-image: url("/trainer-2.jpg");
+}
+
+.trainer-3 {
+    background-image: url("/trainer-3.jpg")
 }
 
 /* REACH OUT STYLES START */
@@ -661,6 +718,10 @@ section {
         writing-mode: unset;
         grid-column: 1 / -1;
         grid-row: -1;
+      }
+
+      .trainer-img h3, .trainer-img h4, .trainer-img::after {
+          display: none;
       }
 }
 
